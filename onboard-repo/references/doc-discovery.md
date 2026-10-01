@@ -2,7 +2,7 @@
 
 ## If a local clone is available
 
-Read directly from disk — it's faster and avoids API rate limits. Check these directories (in order):
+Read directly from disk: it's faster and avoids API rate limits. Check these directories (in order):
 
 ```
 docs/
@@ -24,7 +24,7 @@ gh api repos/{owner}/{repo}/contents/docs --jq '.[].name'
 gh api repos/{owner}/{repo}/contents/docs/FILENAME.md --jq '.content' | base64 -d
 ```
 
-If a GitHub MCP server or similar tool is available in your environment, prefer its `get_file_contents`-style tool over raw `gh api` calls — same discovery order applies.
+If a GitHub MCP server or similar tool is available in your environment, prefer its `get_file_contents`-style tool over raw `gh api` calls. The same discovery order applies.
 
 ## Fallback discovery
 
@@ -38,9 +38,9 @@ If no documentation is found at all, **stop and inform the user** rather than gu
 ## Always fetch these files
 
 Regardless of directory contents, always fetch:
-- `README.md` — high-level context
-- `.github/copilot-instructions.md` — architectural overview (if present)
-- `CLAUDE.md` or `AGENTS.md` — additional AI-assistant context (if present)
+- `README.md`: high-level context
+- `.github/copilot-instructions.md`: architectural overview (if present)
+- `CLAUDE.md` or `AGENTS.md`: additional AI-assistant context (if present)
 
 ## Categorization
 

@@ -1,11 +1,11 @@
 # Domain Glossary Template
 
-Use this template when generating `{repo-short-name}/domain-glossary.md`. Replace all `{placeholders}` with actual values. Adapt sections to fit the repo's domain — omit sections with no relevant content, add new ones if the repo introduces concepts not covered here (e.g., "Report Types", "ETL Pipelines", "Notification Channels").
+Use this template when generating `{repo-short-name}/domain-glossary.md`. Replace all `{placeholders}` with actual values. Adapt sections to fit the repo's domain. Omit sections with no relevant content, add new ones if the repo introduces concepts not covered here (e.g., "Report Types", "ETL Pipelines", "Notification Channels").
 
 ---
 
 ```markdown
-# Domain Glossary — {Descriptive Title for This Repo}
+# Domain Glossary: {Descriptive Title for This Repo}
 
 Use these terms consistently when writing specs, stories, or code for this repo. Where a term maps to a real system entity, the entity name is shown in `code` format.
 
@@ -15,7 +15,7 @@ Use these terms consistently when writing specs, stories, or code for this repo.
 
 | Term | Definition | System Entity |
 |---|---|---|
-| **{Term}** | {Definition} | `{EntityClass}` or — |
+| **{Term}** | {Definition} | `{EntityClass}` or n/a |
 
 ---
 
@@ -23,7 +23,7 @@ Use these terms consistently when writing specs, stories, or code for this repo.
 
 | Term | Definition | Auth Provider |
 |---|---|---|
-| **{Role}** | {Definition} | {e.g. OAuth / SAML / —} |
+| **{Role}** | {Definition} | {e.g. OAuth / SAML / n/a} |
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: onboard-repo
-description: 'Onboard an external repo as a documentation reference for AI-assisted development. Use when the user asks to onboard a repo, add a reference repo, or generate a knowledge-index/domain-glossary for a repo — given as owner/repo, a GitHub URL, or a local path. Discovers docs (local clone preferred, GitHub as fallback) and generates knowledge-index.md + domain-glossary.md.'
+description: 'Onboard an external repo as a documentation reference for AI-assisted development. Use when the user asks to onboard a repo, add a reference repo, or generate a knowledge-index/domain-glossary for a repo, given as owner/repo, a GitHub URL, or a local path. Discovers docs (local clone preferred, GitHub as fallback) and generates knowledge-index.md + domain-glossary.md.'
 argument-hint: 'Repo to onboard: owner/repo, a GitHub URL, or a local path (e.g. octocat/hello-world)'
 ---
 
@@ -10,7 +10,7 @@ Onboard an external repository into this workspace by reading its documentation 
 
 ## Workflow
 
-### Step 1 — Parse the repo input
+### Step 1: Parse the repo input
 
 Accept any of:
 - `owner/repo` (e.g. `octocat/hello-world`)
@@ -19,37 +19,37 @@ Accept any of:
 
 Derive `{repo-short-name}` from the last path segment. This becomes the workspace folder name.
 
-### Step 2 — Discover documentation files
+### Step 2: Discover documentation files
 
-Prefer a local clone if the input was a path, or if a local clone is already known/configured for this repo — reading from disk is faster and avoids API rate limits. Otherwise fetch from GitHub.
+Prefer a local clone if the input was a path, or if a local clone is already known/configured for this repo, since reading from disk is faster and avoids API rate limits. Otherwise fetch from GitHub.
 
 Read [doc-discovery.md](./references/doc-discovery.md) for the full discovery procedure (which directories to scan, fallback locations, and what to categorize as you read).
 
-### Step 3 — Read all documentation files
+### Step 3: Read all documentation files
 
 Read the full contents of every `.md` file discovered in Step 2. As you read, extract and categorize content for the two output files:
 - **Knowledge-index:** feature areas, source doc paths, key details worth capturing per area
 - **Domain-glossary:** entities, roles, integrations, workflows, field names
 
-### Step 4 — Generate knowledge-index.md
+### Step 4: Generate knowledge-index.md
 
 Create `{repo-short-name}/knowledge-index.md` following [knowledge-index-template.md](./assets/knowledge-index-template.md).
 
-### Step 5 — Generate domain-glossary.md
+### Step 5: Generate domain-glossary.md
 
-Create `{repo-short-name}/domain-glossary.md` following [domain-glossary-template.md](./assets/domain-glossary-template.md). Adapt sections to fit the repo's domain — omit empty sections, add new ones if needed.
+Create `{repo-short-name}/domain-glossary.md` following [domain-glossary-template.md](./assets/domain-glossary-template.md). Adapt sections to fit the repo's domain. Omit empty sections, add new ones if needed.
 
-### Step 6 — Create the files in the workspace
+### Step 6: Create the files in the workspace
 
 Create the folder and both files:
 1. `reference-repos/{repo-short-name}/knowledge-index.md`
 2. `reference-repos/{repo-short-name}/domain-glossary.md`
 
-### Step 7 — Update your own project's config files (optional)
+### Step 7: Update your own project's config files (optional)
 
 If this workspace maintains its own routing/instruction files (e.g. `CLAUDE.md`, `.github/copilot-instructions.md`, `README.md`) that list onboarded repos, update them following [config-update-rules.md](./references/config-update-rules.md). Skip this step if the workspace has no such files.
 
-### Step 8 — Summary
+### Step 8: Summary
 
 Present a summary table to the user:
 

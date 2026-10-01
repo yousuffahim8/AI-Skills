@@ -1,6 +1,6 @@
 # Config Update Rules
 
-Optional step — only applies if your workspace maintains its own routing/instruction files that list onboarded reference repos. Skip entirely if it doesn't.
+Optional step: only applies if your workspace maintains its own routing/instruction files that list onboarded reference repos. Skip entirely if it doesn't.
 
 After generating the knowledge-index and domain-glossary files, update whichever of these exist.
 

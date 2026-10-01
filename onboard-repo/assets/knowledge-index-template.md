@@ -5,12 +5,12 @@ Use this template when generating `{repo-short-name}/knowledge-index.md`. Replac
 ---
 
 ```markdown
-# {repo-short-name} — Knowledge Index & Routing Table
+# {repo-short-name}: Knowledge Index & Routing Table
 
 This file tells an AI coding assistant **which source documents to read** for each feature area of this repo.
 
 **Source of truth:** `https://github.com/{owner}/{repo}`
-Never copy content from those docs into this file — always link and fetch live.
+Never copy content from those docs into this file. Always link and fetch live.
 
 ---
 
@@ -18,7 +18,7 @@ Never copy content from those docs into this file — always link and fetch live
 
 1. Identify the feature area your task touches from the table below
 2. Read the linked source docs before writing any code or specs
-3. The **Always load** row applies to every task — read those files first
+3. The **Always load** row applies to every task. Read those files first
 
 ---
 
@@ -47,12 +47,12 @@ gh api repos/{owner}/{repo}/contents/.github/FILENAME.md --jq '.content' | base6
 
 ## Source Doc Inventory
 
-### `docs/` — Documentation
+### `docs/`: Documentation
 | File | Topic |
 |---|---|
 | [filename](https://github.com/{owner}/{repo}/blob/main/docs/filename.md) | Brief topic description |
 
-### `.github/` — Architecture & Integration
+### `.github/`: Architecture & Integration
 | File | Topic |
 |---|---|
 | [filename](https://github.com/{owner}/{repo}/blob/main/.github/filename.md) | Brief topic description |
